@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import Headers from "./components/Header";
 import "./globals.css";
+import About from "./page/About";
+import Contact from "./page/Contact";
+import Project from "./page/Project";
 import { Inter } from "next/font/google";
+import Experience from "./page/Experience";
 
-const inter = Inter({subsets: ["latin"]});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -16,17 +20,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className}, bg-slate-950`}>
-        {/* Header */}
-        <div className="container p-6 mx-auto">
-        <Headers/>
+      <body className={`${inter.className}, bg-gray-50 dark:bg-gray-900`}>
+        <div className="container mx-auto shadow-2xl pl-0 pr-0 bg-gray-100 dark:bg-gray-950 ">
+          <Headers />
+          <main>{children}</main>
+          <About />
+          <Experience />
+          <Project />
+          <Contact />
         </div>
-
-        {/* Content */}
-        <main>{children}</main>
-        {/* Footer */}
-        
       </body>
     </html>
-  );
+  )
 }

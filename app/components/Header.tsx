@@ -1,26 +1,34 @@
 import React from 'react'
-import Link from 'next/link'
-import About from '../about/page'
+import MenuItem from './MenuItem'
+import Theme from './Theme';
+import Link from 'next/link';
 
-export default function Header() {
+const menuItems = [
+  { link: '#about', text: 'About' },
+  { link: '#experience', text: 'Experience' },
+  { link: '#project', text: 'Project' },
+  { link: '#contact', text: 'Contact' },
+];
+
+const Header: React.FC = () => {
   return (
-      <nav className='bg-cyan-300 flex justify-end rounded-xl'>
-        <div className='flex border-r me-2 items-center'>
-              <Link href={"/about"}>
-                <p className='p-4 hover:bg-gray-700 w-full transition duration-500 ease-in-out'>About</p>
-              </Link>
-              <Link href={"/experience"} className=' '>
-                <p className='p-4 hover:bg-gray-700 w-full transition duration-500 ease-in-out'>Experience</p>
-              </Link>
-              <Link href={"/project"} className=' '>
-                <p className='p-4 hover:bg-gray-700 w-full transition duration-500 ease-in-out'>Project</p>
-              </Link>
-              <Link href={"/contact"} className=' '>
-                <p className='p-4 hover:bg-gray-700 w-full transition duration-500 ease-in-out'>Contact</p>
-              </Link>
-        </div>
+    <div className='flex justify-between fixed container text-black dark:text-white top-0 bg-gray-400 dark:bg-gray-950 z-10'>
+      <div className='m-4 ms-5 cursor-pointer'>
+        <Link href={'/'}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        </Link>
+      </div>
 
-        <button className='bg-red-50 rounded-2xl ps-4 pe-4 m-3'>Dowload CV</button>
+      <nav className='flex'>{
+        menuItems.map((item, index) => (
+          <MenuItem key={index} link={item.link} text={item.text} />
+        ))
+      }
+        < Theme />
       </nav>
-  )
+    </div>
+
+  );
 }
+
+export default Header;
