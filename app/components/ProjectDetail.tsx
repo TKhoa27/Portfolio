@@ -24,6 +24,7 @@ const ProjectDetail: React.FC<ProjectProps> = ({ projectName, description, skill
                     height={300}
                     style={{ objectFit: "contain" }}
                     alt={alt}
+                    className="cursor-default transition hover:scale-110 hover:delay-75 hover:duration-150"
                 />
             </div>
 
@@ -31,9 +32,11 @@ const ProjectDetail: React.FC<ProjectProps> = ({ projectName, description, skill
                 ${positionImage === 'right' ? 'order-1 rounded-l-2xl rounded-r-none' : 'order-2 '}`}>
                 <h4 className="mb-2 font-bold">{projectName}</h4>
                 <p className="mb-2">{description}</p>
-                <div className="w-full flex flex-wrap gap-y-1">
+                <div className="w-full flex flex-wrap gap-y-1 ">
                     {skills.map((skill, index) => (
-                        <span className="py-1 px-5 rounded-2xl bg-slate-300 dark:bg-slate-600 me-2 mt-1" key={index}>{skill}</span>
+                        <span className="py-1 px-5 rounded-2xl bg-slate-300 dark:bg-slate-600 cursor-pointer me-2 mt-2 transition ease-in-out duration-300 hover:scale-110 hover:-translate-y-1 hover:bg-slate-500 " key={index}>
+                            {skill}
+                        </span>
                     ))}
                 </div>
 

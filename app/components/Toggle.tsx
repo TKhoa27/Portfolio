@@ -22,7 +22,7 @@ const ToggleContent: React.FC = () => {
                     <div className="text-black dark:text-white  ">
                         <div className='mt-4'>
                             <h3 className='text-center mb-6'>The skills, tools and technologies I am really good at</h3>
-                            <div className='grid grid-cols-7'>
+                            <div className='grid grid-cols-7 '>
                                 <TechIcon urlImage='/icon-javscript.png' text='JavaScript' alt='js' />
                                 <TechIcon urlImage='/icon-typescript.png' text='Typescript' alt='typescript' />
                                 <TechIcon urlImage='/java.png' text='Java' alt='java' />

@@ -1,5 +1,6 @@
+'use client'
 import Image from "next/image";
-import TypeWriter from "./components/TypeWriter";
+import { TypeAnimation } from 'react-type-animation';
 import Link from "next/link";
 
 export default function Home() {
@@ -7,13 +8,17 @@ export default function Home() {
     <section className="flex container p-11 mb-10 pt-32">
       <div className="resume w-2/3">
         <div className="introduce text-white">
-          <h1 className="font-semibold text-black dark:text-white">Hi, I&apos;m Khoa Tiêu</h1>
-          <TypeWriter
-            text="Seeking an entry-level position employment where I can develop my available abilities as a Front-end developer 
-            specializing in React. My expertise includes working with Typescript, Redux, Redux Saga, Bootstrap, and MongoDB.
-	          I am eager to continue learning and am seeking a dynamic work environment where I can further enhance 
-            my skills and make valuable contributions."
-            speed={10} />
+          <h1 className="font-semibold text-black dark:text-white">Hi,  Khoa Tiêu</h1>
+          <TypeAnimation
+            sequence={[
+              "Seeking an entry-level position employment where I can develop my available abilities as a Front-end developer specializing in React. My expertise includes working with Typescript, Redux, Redux Saga, Bootstrap, and MongoDB. I am eager to continue learning and am seeking a dynamic work environment where I can further enhancemy skills and make valuable contributions.",
+            ]}
+            wrapper="p"
+            speed={80}
+            style={{ display: 'inline-block' }}
+            className="text-black dark:text-white"
+            cursor={false}
+          />
         </div>
 
         <div className="social text-black dark:text-white mt-12">
@@ -55,7 +60,7 @@ export default function Home() {
           {/* Social */}
           <div className="flex mt-9">
             {/* Facebook */}
-            <Link href='https://www.facebook.com/?locale=vi_VN' className="me-4 p-1" target="_blank" rel="noopener noreferrer">
+            <Link href='https://www.facebook.com/?locale=vi_VN' className="me-4 p-1 " target="_blank" rel="noopener noreferrer">
               <svg xmlns="http://www.w3.org/2000/svg"
                 width="24" height="24"
                 viewBox="0 0 24 24"
@@ -70,7 +75,7 @@ export default function Home() {
             </Link >
 
             {/* Linkedln */}
-            <Link href='https://www.linkedin.com/in/khoatieudev/' className="me-4 p-1" target="_blank" rel="noopener noreferrer">
+            <Link href='https://www.linkedin.com/in/khoatieudev/' className="me-4 p-1 " target="_blank" rel="noopener noreferrer">
               <svg xmlns="http://www.w3.org/2000/svg"
                 width="24" height="24"
                 viewBox="0 0 24 24"
@@ -87,7 +92,7 @@ export default function Home() {
             </Link >
 
             {/* GitHub */}
-            <Link href='https://github.com/TKhoa27' className="me-4 p-1" target="_blank" rel="noopener noreferrer">
+            <Link href='https://github.com/TKhoa27' className="me-4 p-1 " target="_blank" rel="noopener noreferrer">
               <svg xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"

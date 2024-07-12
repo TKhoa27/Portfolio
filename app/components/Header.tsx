@@ -1,7 +1,7 @@
 import React from 'react'
 import MenuItem from './MenuItem'
-import Theme from './Theme';
 import Link from 'next/link';
+import ThemeSwitch from './ThemeSwitch';
 
 const menuItems = [
   { link: '#about', text: 'About' },
@@ -24,7 +24,7 @@ const Header: React.FC = () => {
           <MenuItem key={index} link={item.link} text={item.text} />
         ))
       }
-        < Theme />
+        <ThemeSwitch />
       </nav>
     </div>
 
